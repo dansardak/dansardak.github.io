@@ -1,8 +1,140 @@
 <html>
   <head>
     <title>Daniel Sardak</title>
+
+    <style>
+      a {
+        color: black;
+      }
+      body {
+        padding-top: 60px;
+      }
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        list-style:none;
+        border: 1px solid black;
+        padding: 10px;
+        border-radius: 5px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        background: white;
+        z-index: 1000;
+        margin: 10px;
+      }
+      nav a {
+        text-decoration: none;
+        color: black;
+        font-size: 1.2rem;
+      }
+
+      .project, .publication, .contact-info {
+        border: 1px solid black;
+        padding: 10px;
+        border-radius: 5px;
+        margin-bottom: 10px;
+      }
+
+      .project a, .publication a, .contact-info a {
+        text-decoration: none;
+        color: black;
+      }
+
+
+    </style>
   </head>
   <body>
-    <h1>test</h1>
+    <nav>
+        <li><a href="#about-me">About</a></li>
+        <li><a href="#publications">Publications</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact-information">Contact</a></li>
+    </nav>
+    
+
+    <center>
+      <h3>Daniel Sardak</h3>
+      <h3><img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" style="width: 24px; height: 24px; vertical-align: middle;" /><a href="https://github.com/dansardak" style="text-decoration: none; color: black;">dansardak</a></h3>
+    </center>
+
+    <details open>
+      <summary><h1 style="display: inline;" id="about-me">About Me</h1></summary>
+      <p> I am a PhD candidate studying data science and robustness in AI. My published work focuses on assessing the robustness of U.S. strategic highways and understanding how natural disasters, such as wildfires, impact critical transportation networks. I am currently a Teaching Assistant at WPI.
+      </p>
+    </details>
+
+    <details open>
+      <summary><h1 style="display: inline;" id="publications">Publications</h1></summary>
+
+      <div class="publication ">
+        <h3><a href="https://www.sciencedirect.com/science/article/pii/S2590198225001861">Contested logistics: Resilience of strategic highways and railways</a></h3>
+        <p>Sukhwan Chung, <strong>Daniel Sardak</strong>, Maksim Kitsak, Andrew Jin, Igor Linkov</p>
+
+        <details>
+          <summary>Abstract</summary>
+          <p>Military logistics rely heavily on public infrastructure, such as highways and railways, to transport troops, equipment, and supplies, linking critical installations through the Department of Defense’s Strategic Highway Network and Strategic Rail Corridor Network. However, these networks are vulnerable to disruptions that can jeopardize operational readiness, particularly in contested environments where adversaries employ non-traditional threats to disrupt logistics, even within the homeland. This paper presents a contested logistics model that utilizes network science and Geographic Information System (GIS) to evaluate the robustness and resilience of strategic transportation networks under various disruption scenarios. By integrating GIS data to model logistics networks, simulating disruptions, and quantifying their impacts, we identified vulnerabilities in US power projection routes and assessed the resilience and robustness of highways and railways. Our findings reveal that highways are more resilient than railways, with greater capacity to absorb targeted disruptions.. These findings underscore the importance of prioritizing investments in highway infrastructure and reinforcing vulnerable road and rail segments, particularly in high-risk regions, to enhance the resilience of military logistics and maintain operational effectiveness in contested conditions.</p>
+        </details>
+      </div>
+
+      <div class="publication">
+        <h3><a href="https://journals.sagepub.com/doi/full/10.1177/03611981251348445?casa_token=SoNfxHnAWRkAAAAA%3Ap-6LkmuHuczHJcWzSzOrolY-wOIOyvz8YYQKJKsDA7z3eH4umBWNYD_ajYWbOSgMnSdNOv3mGSb0Hw">Assessing the Robustness and Resilience of U.S. Strategic Highways: A Network Science Perspective</a></h3>
+        <p>Sukhwan Chung, <strong>Daniel Sardak</strong>, Jeffrey Cegan, Igor Linkov</p>
+        
+        <details>
+          <summary>Abstract</summary>
+          <p>Network science is a powerful tool for analyzing transportation networks, offering insights into their structures and enabling the quantification of resilience and robustness. Understanding the underlying structures of transportation networks is crucial for effective infrastructure planning and maintenance. In military contexts, network science is valuable for analyzing logistics networks, critical for the movement and supply of troops and equipment. The U.S. Army’s logistical success, particularly in the “fort-to-port” phase, relies heavily on the Strategic Highway Network (STRAHNET) in the U.S., which is a system of public highways crucial for military deployments. However, the shared nature of these networks with civilian users introduces unique challenges, including vulnerabilities to cyberattacks and physical sabotage, which is highlighted by the concept of contested logistics. This paper proposes a method that uses network science and geographic information systems (GIS) to assess the robustness and resilience of transportation networks, specifically applied to military logistics. Our findings indicate that, while the STRAHNET is robust against targeted disruptions, it is more resilient to random disruptions.</p>
+        </details>
+        
+      </div>
+
+    </details>
+
+    <details open>
+      <summary><h1 style="display: inline;" id="projects">Projects</h1></summary>
+      
+      <div class="project">
+        <h3>RAG Powered Immigration Form Filler</h3>
+        <p><em>RAG, LLM, Haystack | Jan 2025 - May 2025</em></p>
+        <p>Developed a RAG-powered immigration form filler using Mistral and Haystack. Features an end-to-end RAG pipeline with a chatbot interface for document upload and user information collection.</p>
+      </div>
+      <div class="project">
+        <h3><a href="github.com/dansardak/CS-525-Final-Project">Reinforcement Learning for Ms Pacman</a></h3>
+        
+        <p><em>Python, Reinforcement Learning | Aug - Dec 2024</em></p>
+        <p>Implemented a Rainbow DQN agent with reward shaping techniques. Trained PPO and A2C agents achieving scores of 2,200+.</p>
+      </div>
+
+      <div class="project">
+        <h3>Deep Learning EKG Anomaly Detection</h3>
+        <p><em>Python, Deep Learning | Aug - Dec 2024</em></p>
+        <p>Built a deep learning model using RNNs and LSTMs to detect and correct anomalies in EKG signals.</p>
+      </div>
+
+      <div class="project">
+        <h3>LLM Powered DBMS Assistant</h3>
+        <p><em>LLM, SQL, Python | Aug - Dec 2023</em></p>
+        <p>Created an LLM-powered database assistant using GPT-3.5-turbo that converts natural language queries into SQL. Includes a chatbot interface for database interaction.</p>
+      </div>
+    </details>
+
+
+    <section id="contact-information">
+    <details open>
+      <summary><h1 style="display: inline;">Contact Information</h1></summary>
+
+      <div id="contact-info" class="contact-info">
+        
+        <p>Email: <a href="mailto:dansardak@wpi.edu">dansardak@wpi.edu</a></p>
+        <p>Phone: <a href="tel:+16172335788">617-233-5788</a></p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/daniel-sardak-a085811bb/">Daniel Sardak</a></p>
+        <p>GitHub: <a href="https://github.com/dansardak">dansardak</a></p>
+      </div>
+
+    </details>
+
+
   </body>
 </html>
