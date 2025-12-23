@@ -3,47 +3,149 @@
     <title>Daniel Sardak</title>
 
     <style>
-      a {
-        color: black;
+      :root {
+        --bg-primary: #1a1a2e;
+        --bg-secondary: #16213e;
+        --bg-card: #0f3460;
+        --accent: #e94560;
+        --accent-light: #ff6b6b;
+        --text-primary: #eaeaea;
+        --text-secondary: #a0a0a0;
+        --border-color: #e94560;
       }
+
+      * {
+        box-sizing: border-box;
+      }
+
       body {
-        padding-top: 60px;
+        padding-top: 70px;
+        background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+        color: var(--text-primary);
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        min-height: 100vh;
+        margin: 0;
+        padding-left: 20px;
+        padding-right: 20px;
       }
+
+      a {
+        color: var(--accent-light);
+        transition: color 0.2s ease;
+      }
+
+      a:hover {
+        color: var(--accent);
+      }
+
+      h1, h3 {
+        color: var(--text-primary);
+      }
+
       nav {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        list-style:none;
-        border: 1px solid black;
-        padding: 10px;
-        border-radius: 5px;
+        list-style: none;
+        border: 2px solid var(--accent);
+        padding: 15px 30px;
+        border-radius: 8px;
         position: fixed;
         top: 0;
         left: 0;
         right: 0;
-        background: white;
+        background: var(--bg-secondary);
         z-index: 1000;
         margin: 10px;
-      }
-      nav a {
-        text-decoration: none;
-        color: black;
-        font-size: 1.2rem;
+        box-shadow: 0 4px 20px rgba(233, 69, 96, 0.3);
       }
 
-      .project, .publication, .contact-info {
-        border: 1px solid black;
-        padding: 10px;
-        border-radius: 5px;
+      nav a {
+        text-decoration: none;
+        color: var(--text-primary);
+        font-size: 1.1rem;
+        font-weight: 500;
+        padding: 8px 16px;
+        border-radius: 4px;
+        transition: all 0.2s ease;
+      }
+
+      nav a:hover {
+        background: var(--accent);
+        color: white;
+      }
+
+      nav li {
+        list-style: none;
+      }
+
+      summary {
+        cursor: pointer;
+      }
+
+      summary h1 {
+        margin: 20px 0 15px 0;
+        border-bottom: 2px solid var(--accent);
+        padding-bottom: 8px;
+        display: inline-block;
+      }
+
+      .item {
+        border: 1px solid var(--border-color);
+        padding: 20px;
+        border-radius: 8px;
+        margin-bottom: 15px;
+        background: var(--bg-card);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      .item:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 20px rgba(233, 69, 96, 0.2);
+      }
+
+      .item a {
+        text-decoration: none;
+        color: var(--accent-light);
+      }
+
+      .item h3 {
+        margin-top: 0;
+      }
+
+      .publication a:hover, .project a:hover {
+        text-decoration: underline;
+      }
+
+      #contact-info a {
+        color: var(--accent-light);
+        text-decoration: underline;
+      }
+
+      details summary {
+        outline: none;
+      }
+
+      details[open] > summary {
         margin-bottom: 10px;
       }
 
-      .project a, .publication a, .contact-info a {
-        text-decoration: none;
-        color: black;
+      em {
+        color: var(--text-secondary);
       }
 
+      strong {
+        color: var(--accent-light);
+      }
 
+      center h3 a {
+        color: var(--text-primary);
+      }
+
+      center h3 a:hover {
+        color: var(--accent);
+      }
     </style>
   </head>
   <body>
@@ -57,19 +159,21 @@
 
     <center>
       <h3>Daniel Sardak</h3>
-      <h3><img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" style="width: 24px; height: 24px; vertical-align: middle;" /><a href="https://github.com/dansardak" style="text-decoration: none; color: black;">dansardak</a></h3>
+      <h3><img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" style="width: 24px; height: 24px; vertical-align: middle; filter: invert(1);" /><a href="https://github.com/dansardak" style="text-decoration: none;">dansardak</a></h3>
     </center>
 
     <details open>
       <summary><h1 style="display: inline;" id="about-me">About Me</h1></summary>
+      <div class="item">
       <p> I am a PhD candidate studying data science and robustness in AI. My published work focuses on assessing the robustness of U.S. strategic highways and understanding how natural disasters, such as wildfires, impact critical transportation networks. I am currently a Teaching Assistant at WPI.
       </p>
+      </div>
     </details>
 
     <details open>
       <summary><h1 style="display: inline;" id="publications">Publications</h1></summary>
 
-      <div class="publication ">
+      <div class="item publication">
         <h3><a href="https://www.sciencedirect.com/science/article/pii/S2590198225001861">Contested logistics: Resilience of strategic highways and railways</a></h3>
         <p>Sukhwan Chung, <strong>Daniel Sardak</strong>, Maksim Kitsak, Andrew Jin, Igor Linkov</p>
 
@@ -79,7 +183,7 @@
         </details>
       </div>
 
-      <div class="publication">
+      <div class="item publication">
         <h3><a href="https://journals.sagepub.com/doi/full/10.1177/03611981251348445?casa_token=SoNfxHnAWRkAAAAA%3Ap-6LkmuHuczHJcWzSzOrolY-wOIOyvz8YYQKJKsDA7z3eH4umBWNYD_ajYWbOSgMnSdNOv3mGSb0Hw">Assessing the Robustness and Resilience of U.S. Strategic Highways: A Network Science Perspective</a></h3>
         <p>Sukhwan Chung, <strong>Daniel Sardak</strong>, Jeffrey Cegan, Igor Linkov</p>
         
@@ -95,25 +199,25 @@
     <details open>
       <summary><h1 style="display: inline;" id="projects">Projects</h1></summary>
       
-      <div class="project">
+      <div class="item project">
         <h3>RAG Powered Immigration Form Filler</h3>
         <p><em>RAG, LLM, Haystack | Jan 2025 - May 2025</em></p>
         <p>Developed a RAG-powered immigration form filler using Mistral and Haystack. Features an end-to-end RAG pipeline with a chatbot interface for document upload and user information collection.</p>
       </div>
-      <div class="project">
+      <div class="item project">
         <h3><a href="github.com/dansardak/CS-525-Final-Project">Reinforcement Learning for Ms Pacman</a></h3>
         
         <p><em>Python, Reinforcement Learning | Aug - Dec 2024</em></p>
         <p>Implemented a Rainbow DQN agent with reward shaping techniques. Trained PPO and A2C agents achieving scores of 2,200+.</p>
       </div>
 
-      <div class="project">
+      <div class="item project">
         <h3>Deep Learning EKG Anomaly Detection</h3>
         <p><em>Python, Deep Learning | Aug - Dec 2024</em></p>
         <p>Built a deep learning model using RNNs and LSTMs to detect and correct anomalies in EKG signals.</p>
       </div>
 
-      <div class="project">
+      <div class="item project">
         <h3>LLM Powered DBMS Assistant</h3>
         <p><em>LLM, SQL, Python | Aug - Dec 2023</em></p>
         <p>Created an LLM-powered database assistant using GPT-3.5-turbo that converts natural language queries into SQL. Includes a chatbot interface for database interaction.</p>
@@ -125,9 +229,9 @@
     <details open>
       <summary><h1 style="display: inline;">Contact Information</h1></summary>
 
-      <div id="contact-info" class="contact-info">
+      <div id="contact-info" class="item contact-info">
         
-        <p>Email: <a href="mailto:dansardak@wpi.edu">dansardak@wpi.edu</a></p>
+        <p>Email: <a href="mailto:dsardak@wpi.edu">dsardak@wpi.edu</a></p>
         <p>Phone: <a href="tel:+16172335788">617-233-5788</a></p>
         <p>LinkedIn: <a href="https://www.linkedin.com/in/daniel-sardak-a085811bb/">Daniel Sardak</a></p>
         <p>GitHub: <a href="https://github.com/dansardak">dansardak</a></p>
