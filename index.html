@@ -1,6 +1,21 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
-    <title>Daniel Sardak</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Daniel Sardak &mdash; PhD Student, AI Robustness</title>
+    <meta name="description" content="Daniel Sardak is a PhD student at Worcester Polytechnic Institute researching robustness and debiasing in large language models, and the resilience of critical infrastructure networks." />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Daniel Sardak &mdash; PhD Student, AI Robustness" />
+    <meta property="og:description" content="PhD student at WPI researching LLM robustness, debiasing, and uncertainty estimation." />
+    <meta property="og:url" content="https://dansardak.github.io/" />
+    <meta property="og:image" content="https://dansardak.github.io/portrait.jpg" />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Daniel Sardak &mdash; PhD Student, AI Robustness" />
+    <meta name="twitter:description" content="PhD student at WPI researching LLM robustness, debiasing, and uncertainty estimation." />
+    <meta name="twitter:image" content="https://dansardak.github.io/portrait.jpg" />
 
     <style>
       :root {
@@ -16,6 +31,11 @@
 
       * {
         box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 80px;
       }
 
       body {
@@ -76,8 +96,21 @@
         color: var(--accent);
       }
 
-      nav li {
-        list-style: none;
+      .hero {
+        text-align: center;
+      }
+
+      .hero h3 {
+        font-size: 1.5rem;
+        margin-bottom: 5px;
+      }
+
+      .hero h3 a {
+        color: var(--text-primary);
+      }
+
+      .hero h3 a:hover {
+        color: var(--accent);
       }
 
       summary {
@@ -99,6 +132,13 @@
         background: var(--bg-card);
         box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
         cursor: default;
+        transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+      }
+
+      .publication:hover, .project:hover, .experience:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        border-color: var(--accent);
       }
 
       .item a {
@@ -142,35 +182,182 @@
         font-weight: bold;
       }
 
-      center h3 {
-        font-size: 1.5rem;
-        margin-bottom: 5px;
+      .degree {
+        margin-top: 14px;
+        padding-left: 14px;
+        border-left: 3px solid var(--border-color);
       }
 
-      center h3 a {
+      .degree:first-of-type {
+        margin-top: 8px;
+      }
+
+      .degree p {
+        margin: 4px 0;
+      }
+
+      .degree-title {
+        color: var(--accent-dark);
+        font-weight: bold;
+      }
+
+      .project-meta {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 10px;
+        margin: 10px 0 12px 0;
+      }
+
+      .tags {
+        display: inline-flex;
+        flex-wrap: wrap;
+        gap: 6px;
+      }
+
+      .tag {
+        display: inline-block;
+        background: var(--bg-primary);
+        border: 1px solid var(--border-color);
+        border-radius: 12px;
+        padding: 2px 10px;
+        font-size: 0.85rem;
         color: var(--text-primary);
+        font-family: Georgia, 'Times New Roman', serif;
       }
 
-      center h3 a:hover {
-        color: var(--accent);
+      .project-date {
+        color: var(--text-secondary);
+        font-style: italic;
+        font-size: 0.9rem;
       }
+
+      .resume-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+
+      .resume-actions a {
+        display: inline-block;
+        padding: 8px 16px;
+        border: 1px solid var(--border-color);
+        border-radius: 4px;
+        text-decoration: none;
+        color: var(--accent-dark);
+        background: var(--bg-primary);
+        transition: background 0.2s ease;
+      }
+
+      .resume-actions a:hover {
+        background: var(--border-color);
+      }
+
+      .project-group-heading {
+        margin: 18px 0 12px 0;
+        font-size: 1rem;
+        color: var(--text-secondary);
+        font-weight: normal;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        border-bottom: 1px solid var(--border-color);
+        padding-bottom: 6px;
+      }
+
+      .project-group-heading:first-of-type {
+        margin-top: 4px;
+      }
+
+      @media (max-width: 640px) {
+        html {
+          scroll-padding-top: 120px;
+        }
+
+        body {
+          padding-top: 120px;
+          padding-left: 12px;
+          padding-right: 12px;
+        }
+
+        nav {
+          padding: 8px 8px;
+          flex-wrap: wrap;
+          justify-content: center;
+          gap: 2px;
+        }
+
+        nav a {
+          padding: 6px 8px;
+          font-size: 0.85rem;
+        }
+
+        h1 {
+          font-size: 1.5rem;
+        }
+
+        summary h1 {
+          margin: 18px 0 10px 0;
+        }
+
+        .hero h3 {
+          font-size: 1.3rem;
+        }
+
+        .hero img {
+          width: 120px !important;
+          height: 120px !important;
+        }
+
+        .item {
+          padding: 16px;
+        }
+
+        .item h3 {
+          font-size: 1.05rem;
+        }
+
+        .degree {
+          padding-left: 10px;
+        }
+
+        .project-meta {
+          gap: 8px;
+        }
+
+        .tag {
+          font-size: 0.8rem;
+          padding: 2px 8px;
+        }
+
+        .resume-actions a {
+          flex: 1 1 auto;
+          text-align: center;
+        }
+
+        ul {
+          padding-left: 20px;
+        }
+      }
+
     </style>
   </head>
   <body>
     <nav>
-        <li><a href="#about-me">About</a></li>
-        <li><a href="#publications">Publications</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact-information">Contact</a></li>
+        <a href="#about-me">About</a>
+        <a href="#education">Education</a>
+        <a href="#publications">Publications</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact-information">Contact</a>
     </nav>
-    
 
-    <center>
-      <img src="portrait.jpg" style="border-radius: 50%; width: 150px; height: 150px; object-fit: cover;" />
+
+    <div class="hero">
+      <img src="portrait.jpg" alt="Portrait of Daniel Sardak" style="border-radius: 50%; width: 150px; height: 150px; object-fit: cover;" />
       <h3>Daniel Sardak</h3>
 
       <!-- <h3><img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" style="width: 24px; height: 24px; vertical-align: middle; filter: invert(1);" /><a href="https://github.com/dansardak" style="text-decoration: none;">dansardak</a></h3> -->
-    </center>
+    </div>
 
     <details open>
       <summary><h1 style="display: inline;" id="about-me">About Me</h1></summary>
@@ -181,11 +368,37 @@
     </details>
 
     <details open>
+      <summary><h1 style="display: inline;" id="education">Education</h1></summary>
+
+      <div class="item">
+        <h3>Worcester Polytechnic Institute</h3>
+
+        <div class="degree">
+          <p><span class="degree-title">PhD in Data Science</span> <em>| 2025 &ndash; Present</em></p>
+          <p>Advisor: <a href="https://www.linkedin.com/in/walter-gerych-84165112b/">Walter Gerych</a></p>
+          <p>Research focus: LLM debiasing, robustness of AI models, uncertainty estimation</p>
+        </div>
+
+        <div class="degree">
+          <p><span class="degree-title">Master of Science in Artificial Intelligence</span> <em>| 2024 &ndash; 2025</em></p>
+        </div>
+
+        <div class="degree">
+          <p><span class="degree-title">Bachelor of Science in Computer Science</span> <em>| 2021 &ndash; 2024</em></p>
+        </div>
+      </div>
+
+      
+
+    </details>
+
+    <details open>
       <summary><h1 style="display: inline;" id="publications">Publications</h1></summary>
 
       <div class="item publication">
-        <h3 color="'white"><a href="https://www.sciencedirect.com/science/article/pii/S2590198225001861">Contested logistics: Resilience of strategic highways and railways</a></h3>
+        <h3><a href="https://www.sciencedirect.com/science/article/pii/S2590198225001861">Contested logistics: Resilience of strategic highways and railways</a></h3>
         <p>Sukhwan Chung, <strong>Daniel Sardak</strong>, Maksim Kitsak, Andrew Jin, Igor Linkov</p>
+        <p><em>Transportation Research Interdisciplinary Perspectives &middot; July 2025</em></p>
 
         <details>
           <summary>Abstract</summary>
@@ -196,7 +409,8 @@
       <div class="item publication">
         <h3><a href="https://journals.sagepub.com/doi/full/10.1177/03611981251348445?casa_token=SoNfxHnAWRkAAAAA%3Ap-6LkmuHuczHJcWzSzOrolY-wOIOyvz8YYQKJKsDA7z3eH4umBWNYD_ajYWbOSgMnSdNOv3mGSb0Hw">Assessing the Robustness and Resilience of U.S. Strategic Highways: A Network Science Perspective</a></h3>
         <p>Sukhwan Chung, <strong>Daniel Sardak</strong>, Jeffrey Cegan, Igor Linkov</p>
-        
+        <p><em>Transportation Research Record &middot; 2025</em></p>
+
         <details>
           <summary>Abstract</summary>
           <p>Network science is a powerful tool for analyzing transportation networks, offering insights into their structures and enabling the quantification of resilience and robustness. Understanding the underlying structures of transportation networks is crucial for effective infrastructure planning and maintenance. In military contexts, network science is valuable for analyzing logistics networks, critical for the movement and supply of troops and equipment. The U.S. Army’s logistical success, particularly in the “fort-to-port” phase, relies heavily on the Strategic Highway Network (STRAHNET) in the U.S., which is a system of public highways crucial for military deployments. However, the shared nature of these networks with civilian users introduces unique challenges, including vulnerabilities to cyberattacks and physical sabotage, which is highlighted by the concept of contested logistics. This paper proposes a method that uses network science and geographic information systems (GIS) to assess the robustness and resilience of transportation networks, specifically applied to military logistics. Our findings indicate that, while the STRAHNET is robust against targeted disruptions, it is more resilient to random disruptions.</p>
@@ -207,38 +421,187 @@
     </details>
 
     <details open>
-      <summary><h1 style="display: inline;" id="projects">Projects</h1></summary>
-      
+      <summary><h1 style="display: inline;" id="experience">Experience</h1></summary>
 
-       <div class="item project">
+      <div class="item experience">
+        <h3>Teaching Assistant &mdash; WPI Computer Science Department</h3>
+        <div class="project-meta">
+          <div class="tags">
+            <span class="tag">Information Retrieval</span>
+            <span class="tag">PyTorch</span>
+            <span class="tag">Teaching</span>
+          </div>
+          <span class="project-date">Aug 2025 &ndash; Present</span>
+        </div>
+        <ul>
+          <li>Led office hours for WPI's Information Retrieval course, helping students with homework and course concepts.</li>
+          <li>Created grading rubrics and reference solutions for homework assignments.</li>
+          <li>Designed and delivered a lecture on machine learning and deep learning using PyTorch.</li>
+        </ul>
+      </div>
+
+      <div class="item experience">
+        <h3>Research Intern &mdash; US Army Corps of Engineers</h3>
+        <div class="project-meta">
+          <div class="tags">
+            <span class="tag">Network Science</span>
+            <span class="tag">Image Segmentation</span>
+            <span class="tag">LLMs</span>
+            <span class="tag">Simulation</span>
+            <span class="tag">GIS</span>
+          </div>
+          <span class="project-date">Jun 2024 &ndash; Present</span>
+        </div>
+        <ul>
+          <li>Built a dataset and predictive model analyzing how wildfires influence flood intensity, capturing the compounded effects of natural disasters.</li>
+          <li>Applied network science methods to quantify the resilience of road and rail infrastructure against natural disasters.</li>
+          <li>Trained an image segmentation model achieving 80% accuracy for detecting water towers in satellite imagery.</li>
+          <li>Developed a simulation and analysis framework to compare multiple disaster recovery strategies.</li>
+          <li>Built an LLM-powered application that auto-generates environmental proposals.</li>
+        </ul>
+      </div>
+
+      <div class="item experience">
+        <h3>Peer Learning Assistant &mdash; WPI Math Department</h3>
+        <div class="project-meta">
+          <div class="tags">
+            <span class="tag">Statistics</span>
+            <span class="tag">Calculus</span>
+            <span class="tag">Linear Algebra</span>
+          </div>
+          <span class="project-date">Mar 2022 &ndash; Aug 2025</span>
+        </div>
+        <ul>
+          <li>Led weekly tutoring and discussion sessions for 30+ students in Statistics, Calculus, and Linear Algebra.</li>
+          <li>Graded homework and exams and provided timely feedback on student understanding.</li>
+        </ul>
+      </div>
+    </details>
+
+    <details open>
+      <summary><h1 style="display: inline;" id="projects">Projects</h1></summary>
+
+      <!-- <h2 class="project-group-heading">Research Projects</h2> -->
+
+      <div class="item project">
+
+        <h3>Mitigating Linguistic Bias in LLMs Through Author Obfuscation</h3>
+        <div class="project-meta">
+          <div class="tags">
+            <span class="tag">LLM Bias</span>
+            <span class="tag">Author Obfuscation</span>
+            <span class="tag">Prompt Engineering</span>
+          </div>
+          <span class="project-date">Sep 2025 &ndash; Mar 2026</span>
+        </div>
+
+        <p>Developed a framework to reduce bias in LLMs caused by dialectal variation (e.g., African American English, Gen Z slang), finding that models perform significantly worse on non-standard inputs. The system uses lightweight error prediction combined with Author Obfuscation techniques (paraphrasing, back-translation, standardization) to normalize text style before inference, with paraphrasing achieving an average accuracy improvement of 34%.</p>
+      </div>
+
+      <div class="item project">
+        <h3>Vision Powered Water Tower Detection</h3>
+        <div class="project-meta">
+          <div class="tags">
+            <span class="tag">Computer Vision</span>
+            <span class="tag">Python</span>
+            <span class="tag">OpenCV</span>
+            <span class="tag">YOLOv8</span>
+          </div>
+          <span class="project-date">May 2025 &ndash; Aug 2025</span>
+        </div>
+        <p>Developed a vision-powered water tower detection system using YOLOv8 and OpenCV to identify water towers in satellite imagery. Built a custom training pipeline with a hand-labeled dataset of aerial photos, then fine-tuned the model to handle variations in scale, lighting, and viewing angle. Integrated OpenCV preprocessing to improve detection accuracy on noisy or low-contrast images.</p>
+      </div>
+
+      <div class="item project">
         <h3><a href="https://github.com/dansardak/Responsible-AI-Final-Project">Text-to-Image Model Bias Analysis</a></h3>
-        <p><em>Stable Diffusion, LLM Bias, Text-to-Image Models | Jan 2025 - May 2025</em></p>
+        <div class="project-meta">
+          <div class="tags">
+            <span class="tag">Stable Diffusion</span>
+            <span class="tag">LLM Bias</span>
+            <span class="tag">Text-to-Image</span>
+          </div>
+          <span class="project-date">Jan 2025 &ndash; May 2025</span>
+        </div>
 
         <p>Analyzed bias of several text-to-image models using a combination of no-reference automatic image quality metrics and human-annotated scores. We analyzed images of objects in different continents (for example wedding dress in Africa). Our results showed a disparity between the automatic and human metrics - while the human metrics indicated that typically more underrepresented regions tended to feature more stereotypical images, the automatic metrics gave them higher quality scores.</p>
 
        </div>
 
+
+
+      <!-- <h2 class="project-group-heading">Class Projects</h2> -->
+
+      <div class="item project">
+        <h3>Real-Time Assistive OCR Reader on Raspberry Pi</h3>
+        <div class="project-meta">
+          <div class="tags">
+            <span class="tag">OCR</span>
+            <span class="tag">Python</span>
+            <span class="tag">OpenCV</span>
+            <span class="tag">Raspberry Pi</span>
+            <span class="tag">Tesseract</span>
+          </div>
+          <span class="project-date">May 2025 &ndash; Aug 2025</span>
+        </div>
+        <p>Developed an assistive OCR system designed to help visually impaired and disabled individuals read printed text through a portable Raspberry Pi device. Built the pipeline around Tesseract OCR with OpenCV-based preprocessing (deskewing, adaptive thresholding, and noise reduction) to improve recognition on low-quality camera captures. Experimented with reducing model parameters and tuning inference settings to achieve real-time performance on resource-constrained hardware, and integrated text-to-speech output so recognized text could be read aloud to the user.</p>
+
+
+      </div>
+
+       
+
       <div class="item project">
         <h3>RAG Powered Immigration Form Filler</h3>
-        <p><em>RAG, LLM, Haystack | Jan 2025 - May 2025</em></p>
+        <div class="project-meta">
+          <div class="tags">
+            <span class="tag">RAG</span>
+            <span class="tag">LLM</span>
+            <span class="tag">Haystack</span>
+            <span class="tag">Mistral</span>
+          </div>
+          <span class="project-date">Jan 2025 &ndash; May 2025</span>
+        </div>
         <p>Developed a RAG-powered immigration form filler using Mistral and Haystack. Features an end-to-end RAG pipeline with a chatbot interface for document upload and user information collection.</p>
       </div>
       <div class="item project">
-        <h3><a href="github.com/dansardak/CS-525-Final-Project">Reinforcement Learning for Ms Pacman</a></h3>
-        
-        <p><em>Python, Reinforcement Learning | Aug - Dec 2024</em></p>
+        <h3><a href="https://github.com/dansardak/CS-525-Final-Project">Reinforcement Learning for Ms Pacman</a></h3>
+        <div class="project-meta">
+          <div class="tags">
+            <span class="tag">Python</span>
+            <span class="tag">Reinforcement Learning</span>
+            <span class="tag">Rainbow DQN</span>
+            <span class="tag">PPO</span>
+          </div>
+          <span class="project-date">Aug 2024 &ndash; Dec 2024</span>
+        </div>
         <p>Implemented a Rainbow DQN agent with reward shaping techniques. Trained PPO and A2C agents achieving scores of 2,200+.</p>
       </div>
 
       <!-- <div class="item project">
         <h3>Deep Learning EKG Anomaly Detection</h3>
-        <p><em>Python, Deep Learning | Aug - Dec 2024</em></p>
+        <div class="project-meta">
+          <div class="tags">
+            <span class="tag">Python</span>
+            <span class="tag">Deep Learning</span>
+            <span class="tag">RNN</span>
+            <span class="tag">LSTM</span>
+          </div>
+          <span class="project-date">Aug 2024 &ndash; Dec 2024</span>
+        </div>
         <p>Built a deep learning model using RNNs and LSTMs to detect and correct anomalies in EKG signals.</p>
       </div> -->
 
       <div class="item project">
         <h3>LLM Powered DBMS Assistant</h3>
-        <p><em>LLM, SQL, Python | Aug - Dec 2023</em></p>
+        <div class="project-meta">
+          <div class="tags">
+            <span class="tag">LLM</span>
+            <span class="tag">SQL</span>
+            <span class="tag">Python</span>
+            <span class="tag">GPT-3.5</span>
+          </div>
+          <span class="project-date">Aug 2023 &ndash; Dec 2023</span>
+        </div>
         <p>Created an LLM-powered database assistant using GPT-3.5-turbo that converts natural language queries into SQL. Includes a chatbot interface for database interaction.</p>
       </div>
     </details>
@@ -254,6 +617,7 @@
         <p>Phone: <a href="tel:+16172335788">617-233-5788</a></p>
         <p>LinkedIn: <a href="https://www.linkedin.com/in/daniel-sardak-a085811bb/">Daniel Sardak</a></p>
         <p>GitHub: <a href="https://github.com/dansardak">dansardak</a></p>
+        <p>ORCID: <a href="https://orcid.org/0009-0006-3110-7400">0009-0006-3110-7400</a></p>
       </div>
 
     </details>
@@ -261,7 +625,10 @@
     <details>
       <summary><h1 style="display: inline;">Resume</h1></summary>
       <div class="item">
-        <embed src="Sardak_Daniel_resume.pdf" type="application/pdf" width="100%" height="800px" />
+        <div class="resume-actions">
+          <a href="Sardak_Daniel_resume.pdf" download>Download PDF</a>
+          <a href="Sardak_Daniel_resume.pdf" target="_blank" rel="noopener">View in new tab</a>
+        </div>
       </div>
     </details>
 
